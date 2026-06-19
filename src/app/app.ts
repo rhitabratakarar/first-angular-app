@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Home } from './home/home';
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  template: ` <main>
+    <header class="brand-name">
+      <img class="brand-logo" [ngSrc]="logoPath" aria-hidden="true" aria-hidden="true" width="150" height="60">
+    </header>
+    <section class="content">
+      <app-home></app-home>
+    </section>
+  </main>`,
+  styleUrls: ['./app.css'],
+  imports: [Home, NgOptimizedImage],
 })
 export class App {
-  protected readonly title = signal('first-angular-app');
+  logoPath: string = "logo.svg";
 }
