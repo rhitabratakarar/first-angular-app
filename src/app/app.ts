@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Home } from './home/home';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
@@ -23,7 +22,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     </section>
   </main>`,
   styleUrls: ['./app.css'],
-  imports: [Home, NgOptimizedImage, RouterLink, RouterOutlet],
+  imports: [NgOptimizedImage, RouterLink, RouterOutlet],
 })
 export class App {
   logoPath: string = 'logo.svg';
